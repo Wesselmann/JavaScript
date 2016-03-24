@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+    <link rel="stylesheet" href="main.css"/>
+    <p><a href="javascript.html"><h1>JavaScript</h1></a></p>
+    <h1>forms</h1>
+    <br><br>
+</head>
+
+<body>
+
+<script>
+    function greet_f() {
+        var greet_p = document.getElementById("greet_p");
+        var username = document.getElementById("username");
+        greet_p.innerHTML = "Welcome " + username.value;
+    }
+
+    function validate_data() {
+        var username = document.getElementById("username2").value;
+        var password = document.getElementById("password").value;
+
+        if (username == "" && password == "") {
+
+            alert("Please fill in all fields.");
+            return false;
+        }
+        else if (username == "") {
+            alert("Please insert a username.")
+            return false;
+        }
+        else if (password == "") {
+            alert("Please insert a password.")
+            return false;
+        }
+        else {
+            alert("Welcome " + username);
+            return true;
+        }
+    }
+
+    function validate_data2() {
+        var envyus = document.getElementById("envyus").checked;
+        var fnatic = document.getElementById("fnatic").checked;
+        var astralis = document.getElementById("astralis").checked;
+        var luminosity_gaming = document.getElementById("luminosity_gaming").checked;
+
+        if (envyus == false && fnatic == false && astralis == false && luminosity_gaming == false) {
+            alert("Please select at least 1 team.");
+            return false;
+        }
+        else if (envyus == true && fnatic == true && astralis == true && luminosity_gaming == true) {
+            alert("You can't select 4 teams for the top 3 spots.");
+            return false;
+        }
+        else {
+            alert("Thank you for voting!");
+            return true;
+        }
+    }
+
+    function validate_data3() {
+        var yes = document.getElementById("yes").checked;
+        var no = document.getElementById("no").checked;
+
+        if (yes == false && no == false) {
+            alert("Select your answer please.");
+            return false;
+        }
+        else if (no == true) {
+            alert("BURN IN A FIRE!");
+            return true;
+        }
+        else {
+            alert("Thank you!");
+            return true;
+        }
+    }
+
+</script>
+
+<h3>Login without data validation.</h3>
+<form action="" method="get">
+    <p id="greet_p"></p>
+    Username: <input id="username" type="text" name="username" size="20">
+    <input type="button" value="Login" onclick="greet_f()">
+</form>
+
+<br>
+
+<h3>Login with data validation.</h3>
+<form action="fake-file.html" method="post" onsubmit="return validate_data()">
+    Username: <input id="username2" type="text" name="username2">
+    Password: <input id="password" type="password" name="password">
+    <input type="submit" value="Submit">
+</form>
+
+<br><br>
+
+<h3>Checkboxes with data validation.</h3>
+<form action="" method="get" onsubmit="return validate_data2()">
+    Who's gonna make the top 3 next major? <br>
+    EnvyUs <input id="envyus" type="checkbox" name="major_winner" value="envyus">
+    <br>
+    fnatic <input id="fnatic" type="checkbox" name="major_winner" value="fnatic" checked="checked">
+    <br>
+    Astralis <input id="astralis" type="checkbox" name="major_winner" value="astralis">
+    <br>
+    luminosity_gaming <input id="luminosity_gaming" type="checkbox" name="major_winner" value="luminosity_gaming">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<br><br>
+
+<h3>Radio buttons with data validation.</h3>
+<form action="" method="get" onsubmit="return validate_data3()">
+    Allow cookies for this page? <br>
+    Yes <input id="yes" type="radio" name="allow_cookies" value="yes">
+    No <input id="no" type="radio" name="allow_cookies" value="no">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.headline, h1 {
+    color: #000070;
+    text-decoration: underline;
+    font-style: oblique;
+    font-size: 48px;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #000070;
+    text-decoration: underline;
+    font-style: oblique;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    list-style-image: none;
+}
+
+
+
+.list {
+     list-style-image: url(images/listpoint1_s.png);
+ }
+
+.sub_list {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+
+.list-entry a:link, a:visited {
+    color: #0000A0;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.list-entry a:hover, a:focus, a:active {
+    color: #00FFFF;
+    text-decoration: underline;
+}

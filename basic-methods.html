@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>functions</title>
+    <link rel="stylesheet" href="main.css"/>
+    <p><a href="javascript.html"><h1>JavaScript</h1></a></p>
+    <h1>basic methods</h1>
+    <br><br>
+
+    <script>
+        alert_text("text");
+
+        var result_title = "Result: ";
+        var result = 5 + 12;
+
+        calculation(5, 12, 4);
+        calculation(20, 5, 4);
+        calculation(4, 10, 4);
+
+        function alert_cookies() {
+            alert("Allow cookies?");
+        }
+
+        function alert_text(text) {
+            alert(text);
+        }
+
+        function calculation(number1, number2, number3) {
+            var result = (number1 * number2) / number3;
+            document.write(" <br> (" + number1 + " * " + number2 + ")" + " / " + number3 + " = " + result);
+        }
+    </script>
+</head>
+
+<body>
+<form>
+    <input type="button" value="5 + 12" onclick="alert(result_title + result)"/>
+    <input type="button" value="Please allow cookies." onclick="alert_cookies()"/>
+</form>
+</body>
+</html>

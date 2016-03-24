@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>selectors</title>
+</head>
+<body>
+<link rel="stylesheet" href="../../main.css"/>
+<p><a href="../../javascript.html"><h1>JavaScript</h1></a></p>
+<h1>basic methods</h1>
+<br><br>
+
+<h3> id & class selector</h3>
+<p id="p_id">Double-click to change paragraph via an id selector.</p>
+<p class="p_class">Hover to change paragraph via a class selector.</p>
+
+<br>
+
+<h3>this selector</h3>
+<div id="p_this">
+    <p>Click a specific paragraph to change it via a this selector.</p>
+    <p>Click a specific paragraph to change it via a this selector.</p>
+    <p>Click a specific paragraph to change it via a this selector.</p>
+</div>
+
+<br>
+
+<h3> multiple selector (type & id)</h3>
+<input type="button" value="count all elements">
+<p id="p_id2">count all elements</p>
+<strong>(counted via an asterisk selector)</strong>
+
+<br><br>
+
+<h3>contains selector</h3>
+<div id="p_contains">
+    <strong>Every paragraph containing "1" is selected</strong>
+    <p>1</p>
+    <p>One Direction</p>
+    <p>701</p>
+    <p>404</p>
+</div>
+
+<div id="p_contains2">
+    <strong>Every paragraph containing "martin" is selected</strong>
+    <p>aston martin</p>
+    <p>mar tin</p>
+    <p>martinw</p>
+    <p><a href="http://www.remymartin.com/">http://www.remymartin.com/</a></p>
+</div>
+
+<br>
+
+<h3> even & odd selector</h3>
+<div id="p_even">
+   <strong>Every "even" paragraph is selected (Paragraphs count starts at 0 ergo even = odd)</strong>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+</div>
+
+<div id="p_odd">
+    <strong>Every "odd" paragraph is selected (Paragraphs count starts at 0 ergo odd = even)</strong>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+</div>
+
+<script src="../jquery.js"></script>
+<script src="js.js"></script>
+</body>
+</html>

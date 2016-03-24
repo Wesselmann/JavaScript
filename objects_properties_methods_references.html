@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object properties, methods</title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+
+<body>
+<p><a href="javascript.html"><h1>JavaScript</h1></a></p>
+<h1>objects, properties, methods, references </h1>
+<br><br>
+
+<script>
+    var x = "username";
+    var string_captital = x.toUpperCase();
+    var current_image = 1;
+    var current_image2 = 1;
+    var timer = setInterval("autochange_image()", 1500);
+
+    document.write("String x = " + x + "<br>");
+    document.write("Size of string x: " + x.length + "<br>");
+    document.write("String in uppercases: " + string_captital);
+
+    function aplha_numeric_changer() {
+        var p1 = document.getElementById('p1');
+        if (p1.innerHTML == "Hover to change: A") {
+            p1.innerHTML = "Hover to change: B";
+        }
+        else if (p1.innerHTML == "Hover to change: B") {
+            p1.innerHTML = "Hover to change: C";
+        }
+        else if (p1.innerHTML == "Hover to change: C") {
+            p1.innerHTML = "Hover to change: 1";
+        }
+        else if (p1.innerHTML == "Hover to change: 1") {
+            p1.innerHTML = "Hover to change: 2";
+        }
+        else if (p1.innerHTML == "Hover to change: 2") {
+            p1.innerHTML = "Hover to change: 3";
+        }
+        else {
+            p1.innerHTML = "Hover to change: A"
+        }
+
+        /* other method
+         document.getElementById("p1").innerHTML = "B";
+         */
+    }
+
+    function change_image() {
+        var image = document.getElementById("image");
+
+        if (current_image == 1) {
+            image.src = "images/abstract-cube.jpg";
+            current_image = 2;
+        } else if (current_image == 2) {
+            image.src = "images/manhattan-bridge.jpg";
+            current_image = 3;
+        } else {
+            image.src = "images/abstract-multicolor-waves.jpg";
+            current_image = 1;
+        }
+    }
+
+    function autochange_image() {
+
+        var image = document.getElementById("image2");
+
+        if (current_image2 == 1) {
+            image.src = "images/abstract-cube.jpg";
+            current_image2 = 2;
+        } else if (current_image2 == 2) {
+            image.src = "images/manhattan-bridge.jpg";
+            current_image2 = 3;
+        } else {
+            image.src = "images/abstract-multicolor-waves.jpg";
+            current_image2 = 1;
+        }
+    }
+
+    function start_timer() {
+        timer = setInterval("autochange_image()", 1500);
+    }
+
+</script>
+
+
+<p id="p1" onmouseover="aplha_numeric_changer()">Hover to change: A</p>
+
+<p>Click on the image to change it.<br> <img id="image" onclick="change_image()" src="images/abstract-cube.jpg"
+                                             alt="missing image" width="800" height="200"/>
+    <br><strong>(takes long to load due to image size, you might double-click aswell)</strong>
+</p>
+
+<p>
+    Click on the image to stop the diashow.<br> <img id="image2" onclick="clearInterval(timer);"
+                                                     src="images/abstract-cube.jpg" alt="missing image" width="800"
+                                                     height="200"/>
+    <br><input type="button" value="Start diashow" onclick="start_timer()"/>
+</p>
+
+
+</body>
+
+</html>

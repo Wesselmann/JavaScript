@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if_else_else-if</title>
+    <link rel="stylesheet" href="main.css"/>
+    <p><a href="javascript.html"><h1>JavaScript</h1></a></p>
+    <h1>if, else, else if</h1>
+    <br><br>
+</head>
+
+<body>
+<form action="" method="get" onsubmit="return visitor_check()">
+    <br>
+    <strong>Club rules</strong>
+    <br>
+    Minimum age required: 18
+    <br>
+    Maximum age: 30
+    <br><br>
+    <strong>Bouncer: </strong>Show me your ID. <br>
+    <strong>Visitor: </strong>As u can see i am <input id="age" type="text" name="age" placeholder="age"> years old and
+    <input id="gender" type="text" name="gender" placeholder="gender">,
+    <input type="submit" value="so can i come in?">
+</form>
+
+<script>
+    function visitor_check() {
+        var age = document.getElementById("age").value;
+        var gender = document.getElementById("gender").value;
+
+        var min_age = 18;
+        var max_age = 30;
+
+        if (gender != "male" && gender != "female") {
+
+            alert("Bouncer: Your Dog has to stay out!");
+            return false;
+        }
+        else if (gender == "" && gender == "") {
+            alert("Bouncer: I said show me your ID!");
+            return false;
+        }
+        else if (age >= min_age && age <= max_age || (gender == "female" && age >= 17 && age <= max_age)) {
+            if (gender == "male" && age < 27) {
+                alert("Bouncer: Come in mate.");
+                return false;
+            }
+            else if (gender == "male" && age >= 27) {
+                alert("Bouncer: Hello sir.");
+                return false;
+            }
+            else if (gender == "female" && age < 27) {
+                if (age < 18) {
+                    alert("Bouncer: Hm just seventeen, well okay come in.");
+                    return false;
+                }
+                else {
+                    alert("Bouncer: Hello miss.");
+                    return false;
+                }
+            }
+            else {
+                alert("Bouncer: Hello madam.");
+                return false;
+            }
+        }
+        else if (age > max_age) {
+            alert("Bouncer: I am afraid you're to old for this club.");
+            return false;
+        }
+        else {
+            alert("Bouncer: I am afraid you're to young for this club.");
+            return true;
+        }
+    }
+
+</script>
+</body>
+</html>
