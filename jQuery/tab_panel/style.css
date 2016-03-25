@@ -1,0 +1,61 @@
+body {
+    margin: 0px;
+}
+
+.tab-panel {
+    width: 500px;
+    margin: 0px;
+    border: 3px solid #000050;
+}
+
+h3 {
+    font-size: 24px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    background-color: #000050;
+    border: 2px white solid;
+}
+
+.tabs li {
+    color: white;
+    background-color: #000050;
+    width: 75px;
+    font-size: 20px;
+    text-shadow: white;
+    font-style: oblique;
+    float: left;
+    margin: 0px 10px 10px 0px;
+    list-style-type: none;
+    text-align: center;
+    border: 2px #000050 ridge;
+}
+
+.tabs li.active {
+    color: #000050;
+    background-color: transparent;
+    width: 90px;
+    font-style: oblique;
+    font-size: 20px;
+    text-shadow: #000050;
+    text-align: center;
+    border: 2px #000050 ridge;
+}
+
+.panel {
+    color: #000050;
+    clear: both;
+    margin: 10px;
+    border: 2px #000050 ridge;
+    display: none;
+    color: white;
+    background-color: #000050;
+    text-align: center;
+}
+
+.active {
+    display: block;
+    color: white;
+    background-color: #000050;
+    text-align: center;
+}
